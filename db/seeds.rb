@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+5.times do |i|
+    Edificio.create(nombre_edificio: Faker::Company.name, direccion: Faker::Address.street_address, ciudad: Faker::Address.city)    
+end
+
+10.times do |i|
+    Departamento.create(numero_departamento: Faker::Number.number(digits: 3), edificio: Edificio.all.sample)
+end
