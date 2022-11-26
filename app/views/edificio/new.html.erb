@@ -1,2 +1,21 @@
-<h1>Edificio#new</h1>
-<p>Find me in app/views/edificio/new.html.erb</p>
+<br>
+<br>
+
+<%= link_to "Volver", :back %>
+<h2>Crear nuevo Edificio</h2>
+<%= form_for(@edificio, :url => new_edificio_path, :method => 'post') do |f|%>
+
+<%= f.label :nombre%>
+<td><%= f.text_field(:nombre_edificio)%></td>
+
+<%= f.label :dirección%>
+<td><%= f.text_field(:direccion)%></td>
+
+<%= f.label :ciudad%>
+<td><%= f.text_field(:ciudad)%></td>
+
+
+<br>
+<br>
+<%= f.submit("Crear Edificio")%>
+<%end%>

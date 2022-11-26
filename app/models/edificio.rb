@@ -1,7 +1,6 @@
 class Edificio < ApplicationRecord
-    has_many :departamentos, dependent: :destroy
-
-    validates :nombre_edificio, :direccion, :ciudad, presence: true , uniqueness: { case_sensitive: false}
+    has_has_many :departamentos, class_name: "departamento", foreign_key: "reference_id"
+    validates :numero_edificio, :direccion, :ciudad, presence: true , uniqueness: { case_sensitive: false}
     
   after_create :creacion_exitosa
   
@@ -11,13 +10,9 @@ class Edificio < ApplicationRecord
  
   
   def creacion_exitosa
-      puts "Edificio creado con éxito"
+      puts "Departamento creado con éxito"
   end
   
   def actualizacion_exitosa
-      puts "Edificio actualizado con éxito"
-  end
-
-
-    
+      puts "Departamento actualizado con éxito"
 end

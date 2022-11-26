@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   # get 'departamento/delete'
 
   # root 'edificio#index'
+  
+  # resources :edificio
 
-  resources :edificio do
+  resources :edificios do
     member do
       get :delete
     end
